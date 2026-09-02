@@ -1,0 +1,953 @@
+{
+  "class_diagrams": {
+    "TC01_Library": {
+      "classes": [
+        "Book",
+        "Member",
+        "Borrow"
+      ],
+      "attributes": {
+        "Book": [
+          "title",
+          "authorName",
+          "isbn",
+          "publishedDate"
+        ],
+        "Member": [
+          "memberId",
+          "fullName",
+          "email",
+          "phone"
+        ],
+        "Borrow": [
+          "borrowDate",
+          "returnDate"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Member",
+          "to": "Borrow",
+          "label": "borrows"
+        },
+        {
+          "from": "Borrow",
+          "to": "Book",
+          "label": "includes"
+        }
+      ]
+    },
+    "TC02_Blog": {
+      "classes": [
+        "User",
+        "Post",
+        "Comment"
+      ],
+      "attributes": {
+        "User": [
+          "username",
+          "email",
+          "signUpDate"
+        ],
+        "Post": [
+          "title",
+          "content",
+          "createdDate"
+        ],
+        "Comment": [
+          "text",
+          "date"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "User",
+          "to": "Post",
+          "label": "writes"
+        },
+        {
+          "from": "Post",
+          "to": "Comment",
+          "label": "has"
+        }
+      ]
+    },
+    "TC03_Employee": {
+      "classes": [
+        "Employee",
+        "Department"
+      ],
+      "attributes": {
+        "Employee": [
+          "id",
+          "name",
+          "hiredDate",
+          "salary"
+        ],
+        "Department": [
+          "name",
+          "location"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Employee",
+          "to": "Department",
+          "label": "belongs to"
+        },
+        {
+          "from": "Department",
+          "to": "Employee",
+          "label": "has"
+        },
+        {
+          "from": "Department",
+          "to": "Employee",
+          "label": "manager"
+        }
+      ]
+    },
+    "TC04_ELearning": {
+      "classes": [
+        "Instructor",
+        "Course",
+        "Student",
+        "Progress",
+        "Lesson",
+        "LessonCompletion"
+      ],
+      "attributes": {
+        "Instructor": [
+          "name",
+          "email",
+          "areaOfExpertise"
+        ],
+        "Course": [
+          "title",
+          "description",
+          "price",
+          "difficultyLevel"
+        ],
+        "Student": [],
+        "Progress": [
+          "percentage",
+          "enrolledDate"
+        ],
+        "Lesson": [
+          "title",
+          "content",
+          "duration",
+          "order"
+        ],
+        "LessonCompletion": [
+          "completionDate"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Instructor",
+          "to": "Course",
+          "label": "teaches"
+        },
+        {
+          "from": "Student",
+          "to": "Course",
+          "label": "enrolls in"
+        },
+        {
+          "from": "Course",
+          "to": "Lesson",
+          "label": "contains"
+        },
+        {
+          "from": "Student",
+          "to": "Progress",
+          "label": "has"
+        },
+        {
+          "from": "Progress",
+          "to": "Course",
+          "label": "tracks"
+        },
+        {
+          "from": "Student",
+          "to": "LessonCompletion",
+          "label": "completes"
+        },
+        {
+          "from": "LessonCompletion",
+          "to": "Lesson",
+          "label": "records"
+        }
+      ]
+    },
+    "TC05_Hotel": {
+      "classes": [
+        "Hotel",
+        "Room",
+        "Guest",
+        "Reservation",
+        "Payment",
+        "Amenity"
+      ],
+      "attributes": {
+        "Hotel": [],
+        "Room": [
+          "number",
+          "type",
+          "floor",
+          "nightlyRate"
+        ],
+        "Guest": [
+          "id",
+          "name",
+          "phoneNumber",
+          "email"
+        ],
+        "Reservation": [
+          "checkInDate",
+          "checkOutDate",
+          "totalCost"
+        ],
+        "Payment": [
+          "amount",
+          "date",
+          "paymentMethod"
+        ],
+        "Amenity": [
+          "name"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Hotel",
+          "to": "Room",
+          "label": "has"
+        },
+        {
+          "from": "Room",
+          "to": "Amenity",
+          "label": "has"
+        },
+        {
+          "from": "Guest",
+          "to": "Reservation",
+          "label": "makes"
+        },
+        {
+          "from": "Reservation",
+          "to": "Room",
+          "label": "links to"
+        },
+        {
+          "from": "Reservation",
+          "to": "Payment",
+          "label": "has"
+        }
+      ]
+    },
+    "TC06_Restaurant": {
+      "classes": [
+        "Menu",
+        "MenuItem",
+        "Category",
+        "Order",
+        "OrderItem",
+        "Customer",
+        "Waiter",
+        "Table"
+      ],
+      "attributes": {
+        "Menu": [],
+        "MenuItem": [
+          "name",
+          "description",
+          "price",
+          "category"
+        ],
+        "Category": [
+          "name"
+        ],
+        "Order": [
+          "orderNumber",
+          "placedAt",
+          "status",
+          "total"
+        ],
+        "OrderItem": [
+          "quantity",
+          "specialRequests"
+        ],
+        "Customer": [],
+        "Waiter": [],
+        "Table": [
+          "number",
+          "capacity"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Menu",
+          "to": "MenuItem",
+          "label": "contains"
+        },
+        {
+          "from": "MenuItem",
+          "to": "Category",
+          "label": "belongs to"
+        },
+        {
+          "from": "Order",
+          "to": "OrderItem",
+          "label": "contains"
+        },
+        {
+          "from": "OrderItem",
+          "to": "MenuItem",
+          "label": "references"
+        },
+        {
+          "from": "Customer",
+          "to": "Order",
+          "label": "places"
+        },
+        {
+          "from": "Waiter",
+          "to": "Table",
+          "label": "takes care of"
+        },
+        {
+          "from": "Table",
+          "to": "Order",
+          "label": "associated with"
+        }
+      ]
+    },
+    "TC07_ProjectTasks": {
+      "classes": [
+        "Project",
+        "Task",
+        "TeamMember",
+        "TimeEntry"
+      ],
+      "attributes": {
+        "Project": [
+          "name",
+          "description",
+          "startDate",
+          "deadline"
+        ],
+        "Task": [
+          "title",
+          "description",
+          "status",
+          "priorityLevel",
+          "dueDate"
+        ],
+        "TeamMember": [
+          "name",
+          "role"
+        ],
+        "TimeEntry": [
+          "hoursWorked",
+          "description"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Project",
+          "to": "Task",
+          "label": "has"
+        },
+        {
+          "from": "Task",
+          "to": "TeamMember",
+          "label": "assigned to"
+        },
+        {
+          "from": "TeamMember",
+          "to": "TimeEntry",
+          "label": "logs"
+        },
+        {
+          "from": "Task",
+          "to": "TimeEntry",
+          "label": "has"
+        },
+        {
+          "from": "Project",
+          "to": "TeamMember",
+          "label": "lead by"
+        }
+      ]
+    },
+    "TC08_OnlineStore": {
+      "classes": [
+        "Customer",
+        "ShoppingCart",
+        "Wishlist",
+        "ShippingAddress",
+        "CartItem",
+        "Product",
+        "Category",
+        "Image",
+        "Review",
+        "Order",
+        "OrderItem",
+        "Payment"
+      ],
+      "attributes": {
+        "Customer": [
+          "id",
+          "firstName",
+          "lastName",
+          "email",
+          "phone",
+          "password",
+          "registeredDate"
+        ],
+        "ShoppingCart": [],
+        "Wishlist": [],
+        "ShippingAddress": [
+          "street",
+          "city",
+          "zip",
+          "country"
+        ],
+        "CartItem": [
+          "quantity",
+          "addedDate"
+        ],
+        "Product": [
+          "id",
+          "name",
+          "description",
+          "price",
+          "stock",
+          "isActive"
+        ],
+        "Category": [
+          "id",
+          "name",
+          "description"
+        ],
+        "Image": [
+          "url",
+          "isMain"
+        ],
+        "Review": [
+          "id",
+          "rating",
+          "comment",
+          "date"
+        ],
+        "Order": [
+          "id",
+          "date",
+          "status",
+          "total"
+        ],
+        "OrderItem": [
+          "quantity",
+          "priceAtPurchase"
+        ],
+        "Payment": [
+          "id",
+          "amount",
+          "method",
+          "date"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Customer",
+          "to": "ShoppingCart",
+          "label": "has"
+        },
+        {
+          "from": "Customer",
+          "to": "Wishlist",
+          "label": "has"
+        },
+        {
+          "from": "Customer",
+          "to": "ShippingAddress",
+          "label": "saves"
+        },
+        {
+          "from": "ShoppingCart",
+          "to": "CartItem",
+          "label": "contains"
+        },
+        {
+          "from": "CartItem",
+          "to": "Product",
+          "label": "points to"
+        },
+        {
+          "from": "Product",
+          "to": "Category",
+          "label": "belongs to"
+        },
+        {
+          "from": "Product",
+          "to": "Image",
+          "label": "has"
+        },
+        {
+          "from": "Customer",
+          "to": "Review",
+          "label": "writes"
+        },
+        {
+          "from": "Review",
+          "to": "Product",
+          "label": "for"
+        },
+        {
+          "from": "Category",
+          "to": "Category",
+          "label": "has parent"
+        },
+        {
+          "from": "Customer",
+          "to": "Order",
+          "label": "places"
+        },
+        {
+          "from": "Order",
+          "to": "OrderItem",
+          "label": "contains"
+        },
+        {
+          "from": "OrderItem",
+          "to": "Product",
+          "label": "references"
+        },
+        {
+          "from": "Order",
+          "to": "ShippingAddress",
+          "label": "shipped to"
+        },
+        {
+          "from": "Order",
+          "to": "Payment",
+          "label": "has"
+        }
+      ]
+    },
+    "TC09_Hospital": {
+      "classes": [
+        "Patient",
+        "Doctor",
+        "Department",
+        "Appointment",
+        "MedicalRecord",
+        "Prescription",
+        "Medication",
+        "Room",
+        "Admission",
+        "Invoice",
+        "LineItem"
+      ],
+      "attributes": {
+        "Patient": [
+          "id",
+          "firstName",
+          "lastName",
+          "birthday",
+          "gender",
+          "bloodType",
+          "phone",
+          "address"
+        ],
+        "Doctor": [
+          "id",
+          "name",
+          "specialization",
+          "phone",
+          "email"
+        ],
+        "Department": [
+          "name",
+          "floor"
+        ],
+        "Appointment": [
+          "id",
+          "dateTime",
+          "reasonForVisit",
+          "status"
+        ],
+        "MedicalRecord": [
+          "id",
+          "diagnosis",
+          "symptoms",
+          "notes",
+          "date"
+        ],
+        "Prescription": [
+          "id",
+          "dosageInstructions",
+          "startDate",
+          "endDate"
+        ],
+        "Medication": [
+          "id",
+          "name",
+          "manufacturer",
+          "price"
+        ],
+        "Room": [
+          "number",
+          "type",
+          "dailyRate"
+        ],
+        "Admission": [
+          "admittedDate",
+          "dischargedDate",
+          "totalCost"
+        ],
+        "Invoice": [
+          "number",
+          "issueDate",
+          "dueDate",
+          "total",
+          "isPaid"
+        ],
+        "LineItem": [
+          "service",
+          "cost"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Doctor",
+          "to": "Department",
+          "label": "assigned to"
+        },
+        {
+          "from": "Patient",
+          "to": "Appointment",
+          "label": "has"
+        },
+        {
+          "from": "Doctor",
+          "to": "Appointment",
+          "label": "conducts"
+        },
+        {
+          "from": "Appointment",
+          "to": "MedicalRecord",
+          "label": "creates"
+        },
+        {
+          "from": "Doctor",
+          "to": "MedicalRecord",
+          "label": "writes"
+        },
+        {
+          "from": "Doctor",
+          "to": "Prescription",
+          "label": "writes"
+        },
+        {
+          "from": "Prescription",
+          "to": "Medication",
+          "label": "for"
+        },
+        {
+          "from": "Patient",
+          "to": "Room",
+          "label": "admitted to"
+        },
+        {
+          "from": "Room",
+          "to": "Admission",
+          "label": "tracks"
+        },
+        {
+          "from": "Patient",
+          "to": "Invoice",
+          "label": "billed through"
+        },
+        {
+          "from": "Invoice",
+          "to": "LineItem",
+          "label": "contains"
+        }
+      ]
+    },
+    "TC10_University": {
+      "classes": [
+        "Student",
+        "Major",
+        "Course",
+        "Department",
+        "Faculty",
+        "Section",
+        "Room",
+        "Grade",
+        "Club"
+      ],
+      "attributes": {
+        "Student": [
+          "id",
+          "firstName",
+          "lastName",
+          "email",
+          "enrolledDate",
+          "gpa"
+        ],
+        "Major": [
+          "name",
+          "requiredCredits"
+        ],
+        "Course": [
+          "code",
+          "title",
+          "description",
+          "creditHours"
+        ],
+        "Department": [
+          "name",
+          "building"
+        ],
+        "Faculty": [
+          "id",
+          "name",
+          "title",
+          "officeLocation"
+        ],
+        "Section": [
+          "number",
+          "semester",
+          "year",
+          "meetingTime",
+          "room"
+        ],
+        "Room": [
+          "number",
+          "building",
+          "seatCount"
+        ],
+        "Grade": [
+          "value"
+        ],
+        "Club": [
+          "name",
+          "description"
+        ]
+      },
+      "relationships": [
+        {
+          "from": "Student",
+          "to": "Major",
+          "label": "picks"
+        },
+        {
+          "from": "Course",
+          "to": "Department",
+          "label": "offered by"
+        },
+        {
+          "from": "Faculty",
+          "to": "Section",
+          "label": "teaches"
+        },
+        {
+          "from": "Student",
+          "to": "Section",
+          "label": "enrolls in"
+        },
+        {
+          "from": "Section",
+          "to": "Room",
+          "label": "meets in"
+        },
+        {
+          "from": "Student",
+          "to": "Grade",
+          "label": "receives"
+        },
+        {
+          "from": "Section",
+          "to": "Grade",
+          "label": "assigns"
+        },
+        {
+          "from": "Student",
+          "to": "Club",
+          "label": "joins"
+        },
+        {
+          "from": "Club",
+          "to": "Student",
+          "label": "has president"
+        },
+        {
+          "from": "Course",
+          "to": "Course",
+          "label": "has prerequisite"
+        },
+        {
+          "from": "Course",
+          "to": "Major",
+          "label": "required for"
+        }
+      ]
+    }
+  },
+  "use_case_diagrams": {
+    "TC11_ATM": {
+      "actors": [
+        "Bank Customer",
+        "Admin"
+      ],
+      "system_actors": [
+        "Bank System"
+      ],
+      "system_boundary": "ATM System",
+      "use_cases": [
+        "Enter PIN",
+        "Verify PIN",
+        "Check balance",
+        "Withdraw cash",
+        "Deposit cash",
+        "Transfer money between accounts",
+        "Update balances",
+        "Refill cash",
+        "View transaction history"
+      ],
+      "include_relationships": [
+        {
+          "from": "Enter PIN",
+          "to": "Verify PIN"
+        },
+        {
+          "from": "Withdraw cash",
+          "to": "Update balances"
+        },
+        {
+          "from": "Deposit cash",
+          "to": "Update balances"
+        },
+        {
+          "from": "Transfer money between accounts",
+          "to": "Update balances"
+        }
+      ]
+    },
+    "TC12_OnlineStore": {
+      "actors": [
+        "Customer",
+        "Admin"
+      ],
+      "system_actors": [
+        "Third Party Payment System"
+      ],
+      "system_boundary": "Online Store System",
+      "use_cases": [
+        "Browse products",
+        "Search products by category",
+        "Add product to cart",
+        "Checkout",
+        "Track order status",
+        "Log in",
+        "Process payment",
+        "Manage stock",
+        "Handle refunds",
+        "Generate sales reports"
+      ],
+      "include_relationships": [
+        {
+          "from": "Checkout",
+          "to": "Process payment"
+        }
+      ]
+    },
+    "TC13_Library": {
+      "actors": [
+        "Member",
+        "Librarian"
+      ],
+      "system_actors": [],
+      "system_boundary": "Library System",
+      "use_cases": [
+        "Search for books",
+        "Put book on hold",
+        "Borrow book",
+        "Return book",
+        "Add new book",
+        "Remove old book",
+        "Manage member account",
+        "Handle late fees",
+        "Notify member about reserved book availability"
+      ],
+      "include_relationships": [
+        {
+          "from": "Put book on hold",
+          "to": "Notify member about reserved book availability"
+        }
+      ]
+    },
+    "TC14_Hospital": {
+      "actors": [
+        "Patient",
+        "Doctor",
+        "Receptionist"
+      ],
+      "system_actors": [
+        "Billing System"
+      ],
+      "system_boundary": "Hospital Appointment System",
+      "use_cases": [
+        "Sign up as patient",
+        "View available times",
+        "Book an appointment",
+        "Cancel an appointment",
+        "Check schedule",
+        "Mark appointment as done",
+        "Manage calendar",
+        "Sign up walk-in patient",
+        "Send appointment reminders",
+        "Process payment"
+      ],
+      "include_relationships": [
+        {
+          "from": "Book an appointment",
+          "to": "Process payment"
+        }
+      ]
+    },
+    "TC15_ELearning": {
+      "actors": [
+        "Student",
+        "Teacher",
+        "Admin"
+      ],
+      "system_actors": [],
+      "system_boundary": "Online Learning Platform",
+      "use_cases": [
+        "Browse courses",
+        "Sign up for course",
+        "Watch course videos",
+        "Submit homework",
+        "Take quizzes",
+        "Receive certificate for course completion",
+        "Create course",
+        "Upload course materials",
+        "Grade student work",
+        "Post announcements",
+        "Manage user accounts",
+        "Approve courses",
+        "Track platform usage"
+      ],
+      "include_relationships": [
+        {
+          "from": "Create course",
+          "to": "Upload course materials"
+        }
+      ]
+    }
+  }
+}

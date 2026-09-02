@@ -1,0 +1,70 @@
+# ---- Secrets: never commit ----
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+*.crt
+*.p12
+credentials.json
+service-account.json
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+venv/
+.venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# ---- Node ----
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Build output ----
+frontend/app/dist/
+frontend/app/.vite/
+
+# ---- Third-party binaries fetched by scripts/fetch-resources.sh ----
+backend/resources/plantuml.jar
+backend/resources/*.pdf
+backend/plantuml.jar
+
+# ---- Databases and dumps ----
+*.db
+*.sqlite
+*.sqlite3
+*.sql.gz
+*.dump
+
+# ---- Logs ----
+*.log
+logs/
+
+# ---- IDE / tooling ----
+.idea/
+.vscode/
+.claude/
+*.swp
+*.swo
+*~
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# ---- Windows/WSL copy artifacts ----
+*:Zone.Identifier

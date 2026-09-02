@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+title: Requirements Assessment and UML Generation from Natural Language
+message: >-
+  If you use this software, please cite the conference paper below.
+type: software
+authors:
+  - given-names: Amir
+    family-names: Zhumagaliyev
+    affiliation: University of Seoul
+  - given-names: Han-joon
+    family-names: Kim
+    affiliation: University of Seoul
+repository-code: >-
+  https://github.com/uos-dmlab/Requirements-Assessment-UML-Generation
+url: https://umlreq.com
+license: MIT
+preferred-citation:
+  type: conference-paper
+  title: Automated Requirements Assessment and UML Generation from Natural Language
+  authors:
+    - given-names: Amir
+      family-names: Zhumagaliyev
+      affiliation: University of Seoul
+    - given-names: Han-joon
+      family-names: Kim
+      affiliation: University of Seoul
+  collection-title: >-
+    2026 IEEE/ACIS 24th International Conference on Software Engineering,
+    Management and Applications (SERA)
+  conference:
+    name: >-
+      IEEE/ACIS 24th International Conference on Software Engineering,
+      Management and Applications (SERA)
+    city: Towson
+    region: Maryland
+    country: US
+  year: 2026
+  month: 5
+  publisher:
+    name: IEEE
+  doi: 10.1109/SERA69989.2026.11618662
+  isbn: '979-8-3195-0657-3'
+  issn: '2770-8209'
